@@ -1,6 +1,6 @@
 import gql from 'graphql-tag'
 export default gql`
-    scaler UUID
-    scaler Datetime
-    scalar JSON
+  scalar UUID
+  scalar Datetime
+  scalar JSON
 `

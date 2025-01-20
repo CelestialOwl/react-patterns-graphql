@@ -1,6 +1,6 @@
 import gql from 'graphql-tag'
 export default gql`
-    type User{
+  type User {
     id: UUID!
     username: String!
     email: String!
@@ -9,31 +9,31 @@ export default gql`
     active: Boolean!
     createdAt: Datetime!
     updatedAt: Datetime!
-    }
-    
-    type Query {
+  }
+
+  type Query {
     getUser(at: String!): User!
     getUsers: [User!]
+  }
 
-    type Mutation {
-        createUser(input: CreateUserInput): User!
-        login(input: LoginInput): Token!
-    }
+  type Mutation {
+    createUser(input: CreateUserInput): User!
+    login(input: LoginInput): Token!
+  }
 
-    type Token {
-        token: String!   
-    }
-    input CreateUserInput {
-        username: String!
-        password: String!
-        email: String!
-        active: Boolean!
-        role: String!
-    }
-    input LoginInput {
-        emailOrUsername: String!
-        password: String!
-    }
-}
+  type Token {
+    token: String!
+  }
+
+  input CreateUserInput {
+    username: String!
+    password: String!
+    email: String!
+    active: Boolean!
+    role: String!
+  }
+  input LoginInput {
+    email: String!
+    password: String!
+  }
 `
-
